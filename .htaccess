@@ -1,0 +1,77 @@
+RewriteEngine On
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+</IfModule>
+# ===============================================
+# 1. BẢO MẬT CORE LOGIC (QUAN TRỌNG)
+# CHỈ CẤM truy cập trực tiếp vào thư mục 'core'
+#RewriteRule ^core/ - [F,L]
+# ===============================================
+
+#Xử lý Route ADMIN
+RewriteRule ^admin/blog-edit/([A-Za-z0-9-]+) index.php?module=admin&action=blog-edit&id=$1 [L]
+RewriteRule ^admin/bank-edit/([A-Za-z0-9-]+) index.php?module=admin&action=bank-edit&id=$1 [L]
+RewriteRule ^admin/user-edit/([A-Za-z0-9-]+) index.php?module=admin&action=user-edit&id=$1 [L]
+RewriteRule ^admin/code-edit/([A-Za-z0-9-]+) index.php?module=admin&action=code-edit&id=$1 [L]
+RewriteRule ^admin/edit-new/([A-Za-z0-9-]+) index.php?module=admin&action=edit-new&id=$1 [L]
+RewriteRule ^admin/edit-seller/([A-Za-z0-9-]+) index.php?module=admin&action=edit-seller&id=$1 [L]
+RewriteRule ^admin/edit-sevice-code/([A-Za-z0-9-]+) index.php?module=admin&action=edit-sevice-code&id=$1 [L]
+RewriteRule ^admin/([A-Za-z0-9-]+) index.php?module=admin&action=$1 [L]
+RewriteRule ^admin index.php?module=admin&action= [L]
+
+
+#Xử lý Route CLIENT
+RewriteRule ^client/home/([A-Za-z0-9-]+) index.php?module=client&action=home&shop=$1 [L]
+RewriteRule ^client/view-code/([A-Za-z0-9-]+) index.php?module=client&action=view-code&code=$1 [L]
+RewriteRule ^client/hostings/([A-Za-z0-9-]+) index.php?module=client&action=hostings&id=$1 [L]
+RewriteRule ^client/datahosting/([A-Za-z0-9-]+) index.php?module=client&action=datahosting&id=$1 [L]
+RewriteRule ^client/pay-domain/([A-Za-z0-9.-]+)$ index.php?module=client&action=pay-domain&domain=$1 [L]
+RewriteRule ^client/vps/([A-Za-z0-9-]+) index.php?module=client&action=vps&id=$1 [L]
+RewriteRule ^client/seller/([A-Za-z0-9-]+) index.php?module=client&action=seller&id=$1 [L]
+RewriteRule ^client/blog/([A-Za-z0-9-]+) index.php?module=client&action=view-blog&code=$1 [L]
+RewriteRule ^client/([A-Za-z0-9-]+) index.php?module=client&action=$1 [L]
+RewriteRule ^client index.php?module=client&action= [L]
+
+
+#Xử lý Route Model
+RewriteRule ^model/authenticator$ /ajaxs/client/authenticator.php [L]
+RewriteRule ^model/buycode$ /ajaxs/client/buy-code.php [L]
+RewriteRule ^model/buycron$ /ajaxs/client/buy-cron.php [L]
+RewriteRule ^model/buydomain$ /ajaxs/client/buy-domain.php [L]
+RewriteRule ^model/domainAPI$ /ajaxs/client/buy-domainAPI.php [L]
+RewriteRule ^model/whoidomain$ /ajaxs/client/whoidomain.php [L]
+RewriteRule ^model/buyhosting$ /ajaxs/client/buy-hosting.php [L]
+RewriteRule ^model/changePassword$ /ajaxs/client/changePassword.php [L]
+RewriteRule ^model/favorite$ /ajaxs/client/favorite.php [L]
+RewriteRule ^model/google$ /ajaxs/client/google.php [L]
+RewriteRule ^model/ioncube$ /ajaxs/client/ioncube.php [L]
+RewriteRule ^model/login$ /ajaxs/client/login.php [L]
+RewriteRule ^model/register$ /ajaxs/client/register.php [L]
+RewriteRule ^model/resetPassword$ /ajaxs/client/resetPassword.php [L]
+RewriteRule ^model/napthe$ /ajaxs/client/napthe.php [L]
+
+#Cấu  hình   đường dẫn check key
+RewriteRule ^model/check-key$ /core/api/check.php [L]
+RewriteRule ^model/redirect-key$ /core/api/redirect.php [L]
+
+
+#Xử lý Route Google Login
+RewriteRule ^google-callback$ /api/google-callback.php [L]
+RewriteRule ^login/google$ /ajaxs/client/google.php [L]
+
+#Xử lý vớ vẩn
+RewriteRule ^ip$ /ip.php [L]
+
+
+ErrorDocument 404 /resources/views/errors/404.php
+ErrorDocument 403 /resources/views/errors/403.php
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

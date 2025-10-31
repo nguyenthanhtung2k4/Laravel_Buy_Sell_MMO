@@ -1,0 +1,9 @@
+[2025-10-27 14:20:15] [::1] [INFO] HMAC added {"name":"GOLIKE"}
+[2025-10-27 14:21:02] [::1] [INFO] License added {"key":"3238d8e09aee8b2f4baaaadb29db241f67","hmac_id":1}
+[2025-10-27 14:24:14] [::1] [INFO] License added {"key":"a4c16aae90e15bacaf9bd0f322b5718f","hmac_id":1}
+[2025-10-27 14:26:31] [::1] [INFO] License added {"key":"139ad49d6c9b236e0191c0908410c9a2","hmac_id":1}
+[2025-10-27 14:42:28] [::1] [INFO] Cleanup run {"deleted":0,"cutoff":"2025-09-27 14:42:28"}
+[2025-10-27 17:47:56] [::1] [INFO] Cleanup run {"deleted":0,"cutoff":"2025-09-27 17:47:56"}
+[2025-10-28 04:24:27] [::1] [INFO] Cleanup run {"deleted":0,"cutoff":"2025-09-28 04:24:27"}
+[2025-10-28 12:41:34] [::1] [ERROR] Cleanup error {"message":"SQLSTATE[HY000] [1049] Unknown database 'license_db'"}
+[FATAL] Database Logging Failed: SQLSTATE[HY000] [1049] Unknown database 'license_db'

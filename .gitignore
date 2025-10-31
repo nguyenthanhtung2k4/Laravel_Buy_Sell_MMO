@@ -1,0 +1,16 @@
+*BTL_Book_movie_tickets/
+*Clone_Store/
+*DNU_OpenSource/
+*MySQL_AzViet.sql
+*Open-Source-Software-Development/
+
+
+/vendor
+/node_modules
+/storage/*.key
+/public/build
+/public/hot
+/public/storage
+.env
+/.idea
+
