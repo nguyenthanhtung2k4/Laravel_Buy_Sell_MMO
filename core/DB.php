@@ -3,7 +3,7 @@ session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 define('DB_HOST', 'localhost'); 
 define('DB_USER', 'root');
-define('DB_PASS', 'password');
+define('DB_PASS', 'tung2004');
 define('DB_NAME', 'license_db');
 class DB
 {
